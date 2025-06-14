@@ -1,0 +1,158 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>👑 Satta King Live Result</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #000000, #1a1a1a);
+      color: #fff;
+      text-align: center;
+    }
+    .header {
+      background: yellow;
+      color: black;
+      padding: 15px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .subhead {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    .result-box {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff0000;
+    }
+    .game-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+    }
+    .game-number {
+      font-size: 42px;
+      font-weight: bold;
+      color: green;
+    }
+    .cta {
+      background: #25D366;
+      color: white;
+      padding: 18px 40px;
+      margin: 25px auto;
+      display: inline-block;
+      border-radius: 50px;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 15px #25D366;
+      animation: pulse 1.5s infinite;
+    }
+    .message {
+      font-size: 16px;
+      color: #aaa;
+      margin-top: 10px;
+    }
+    .blink {
+      animation: blinker 1s linear infinite;
+      color: red;
+      font-weight: bold;
+    }
+    @keyframes blinker {
+      50% { opacity: 0; }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 5px #25D366; }
+      50% { box-shadow: 0 0 20px #25D366; }
+      100% { box-shadow: 0 0 5px #25D366; }
+    }
+    .fixed-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      z-index: 100;
+      box-shadow: 0 0 15px #25D366;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">👑 SATTA KING 👑</div>
+  <div class="subhead">100% Trusted | No Advance | Direct Company Jodi</div>
+
+  <div class="result-box">
+    <div class="game-name">🔴 GALI RESULT</div>
+    <div class="game-number">28</div>
+    <p class="blink">LIVE UPDATE ✅</p>
+  </div>
+
+  <a href="https://wa.me/919258797735?text=Hello%20Bhai%2C%20Leak%20Jodi%20Chahiye%20Abhi" class="cta">
+    📲 Click Here to Get Leak Jodi on WhatsApp
+  </a>
+
+  <div class="message">Jo bhi aaya hai, bina message kiye na jaaye! Game fix milta hai yahan! 💯</div>
+
+  <a class="fixed-whatsapp" href="https://wa.me/919258797735?text=Hello%20Bhai%2C%20Leak%20Jodi%20Chahiye%20Abhi" target="_blank">💬</a>
+
+</body>
+</html>
