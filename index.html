@@ -1,41 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <title>रिजल्ट लाइव है</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        // Function to redirect to WhatsApp on scroll
-        window.onscroll = function() {
-            window.location.href = "https://wa.me/919258797735";
-        };
-    </script>
+    <title>सट्टा किंग लाइव रिजल्ट</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            padding: 50px;
-            background-color: #f9f9f9;
+            direction: rtl; /* Hindi ke liye right-to-left direction */
         }
-        h1 {
-            color: green;
-            font-size: 2em;
+        .header {
+            background-color: #003087;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
         }
-        a {
-            display: block;
-            margin: 15px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: blue;
+        .result-box {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #003087;
+            border-radius: 10px;
+        }
+        .result-box h3 {
+            font-size: 20px;
+            color: #333;
+        }
+        .result-box h2 {
+            color: #ff0000;
+            font-size: 28px;
+        }
+        .result-box p {
+            font-size: 24px;
+            color: #008000;
+        }
+        .footer {
+            background-color: #003087;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <h1>📢 रिजल्ट लाइव है!</h1>
-    <p>नीचे किसी भी लिंक पर क्लिक करें, पूरी जानकारी के लिए:</p>
-    <a href="https://wa.me/919258797735">रिजल्ट चेक करें</a>
-    <a href="https://wa.me/919258797735">नोटिफिकेशन देखें</a>
-    <a href="https://wa.me/919258797735">Telegram चैनल (क्लिक करते ही WhatsApp खुलेगा)</a>
+    <div class="header">
+        सट्टा किंग - लाइव रिजल्ट
+    </div>
+
+    <div class="result-box">
+        <h3>15 जून 2025, 2:59 AM</h3>
+        <h2>गली</h2>
+        <p>28</p>
+    </div>
+
+    <div class="result-box">
+        <h3>14 जून 2025, 10:00 PM</h3>
+        <h2>गाजियाबाद</h2>
+        <p>31</p>
+    </div>
+
+    <div class="footer">
+        सट्टा किंग रिकॉर्ड चार्ट
+    </div>
+
+    <script>
+        // Kisi bhi jagah click karne par WhatsApp khulega
+        document.body.addEventListener('click', function() {
+            window.location.href = 'https://wa.me/919258797735?text=मुझे सट्टा किंग रिजल्ट चाहिए';
+        });
+
+        // Scroll karne par WhatsApp khulega
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            let st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > lastScrollTop || st < lastScrollTop) {
+                window.location.href = 'https://wa.me/919258797735?text=मुझे सट्टा किंग रिजल्ट चाहिए';
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+        });
+    </script>
 </body>
 </html>
