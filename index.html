@@ -575,6 +575,45 @@
             }, 5000);
         });
     </script>
+    <!-- COPY BELOW CODE -->
+<!-- WhatsApp Button -->
+<div class="whatsapp-float" onclick="openWhatsApp()">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</div>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 1.5in; /* 1 inch upar */
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    z-index: 100;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 2s ease-in-out infinite;
+  }
+  .whatsapp-float img {
+    width: 50px;
+    height: 50px;
+  }
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+</style>
+
+<script>
+  function openWhatsApp() {
+    window.open('https://wa.me/919258797735', '_blank');
+  }
+</script>
 </body>
 </html>
 <head>
