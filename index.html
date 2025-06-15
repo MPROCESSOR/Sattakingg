@@ -25,12 +25,14 @@
             color: var(--light);
             cursor: pointer;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         
         .container {
             max-width: 100%;
             padding: 10px;
             position: relative;
+            padding-bottom: 80px; /* Space for floating button */
         }
         
         /* Header Styles */
@@ -44,14 +46,14 @@
         
         .header h1 {
             color: var(--secondary);
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
             letter-spacing: 2px;
         }
         
         .header p {
             color: var(--primary);
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-top: 5px;
         }
         
@@ -68,13 +70,13 @@
         
         .banner h2 {
             color: var(--secondary);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
         
         .banner p {
             color: var(--light);
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.5;
         }
         
@@ -94,7 +96,7 @@
         
         .live-results h3 {
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             text-align: center;
             margin-bottom: 15px;
             text-decoration: underline;
@@ -117,6 +119,7 @@
         .result-name {
             color: var(--secondary);
             font-weight: bold;
+            font-size: 0.9rem;
         }
         
         .result-value {
@@ -134,7 +137,7 @@
         .chart-title {
             color: var(--primary);
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
             text-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
         }
@@ -144,17 +147,19 @@
             border-collapse: collapse;
             margin: 10px 0;
             background-color: rgba(0, 0, 0, 0.5);
+            font-size: 0.8rem;
         }
         
         th, td {
             border: 1px solid var(--primary);
-            padding: 8px;
+            padding: 6px;
             text-align: center;
         }
         
         th {
             background-color: rgba(255, 102, 0, 0.3);
             color: var(--secondary);
+            font-size: 0.9rem;
         }
         
         td {
@@ -172,13 +177,13 @@
         
         .rate-title {
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
         
         .rate-value {
             color: var(--secondary);
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
         }
         
@@ -194,7 +199,7 @@
         .time-table h3 {
             color: var(--primary);
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
         }
         
@@ -203,6 +208,7 @@
             justify-content: space-between;
             padding: 8px 0;
             border-bottom: 1px dotted var(--primary);
+            font-size: 0.9rem;
         }
         
         .time-name {
@@ -216,7 +222,7 @@
         /* Footer Styles */
         .footer {
             background: linear-gradient(to right, var(--dark), var(--darker));
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             border-top: 3px solid var(--primary);
             margin-top: 20px;
@@ -225,15 +231,16 @@
         .whatsapp-btn {
             background-color: #25D366;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border: none;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: bold;
             margin: 10px 0;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s;
+            display: inline-block;
         }
         
         .whatsapp-btn:hover {
@@ -243,7 +250,7 @@
         
         .disclaimer {
             color: #aaa;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             margin-top: 15px;
             line-height: 1.4;
         }
@@ -262,24 +269,95 @@
         /* Floating WhatsApp Button */
         .floating-whatsapp {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             background-color: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             z-index: 100;
             animation: pulse 1.5s infinite;
+            cursor: pointer;
+        }
+        
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .banner h2 {
+                font-size: 1.8rem;
+            }
+            
+            .banner p {
+                font-size: 1.1rem;
+            }
+            
+            .live-results h3 {
+                font-size: 1.5rem;
+            }
+            
+            .result-name {
+                font-size: 1rem;
+            }
+            
+            .chart-title {
+                font-size: 1.8rem;
+            }
+            
+            table {
+                font-size: 1rem;
+            }
+            
+            th {
+                font-size: 1rem;
+            }
+            
+            .rate-title {
+                font-size: 1.5rem;
+            }
+            
+            .rate-value {
+                font-size: 1.8rem;
+            }
+            
+            .time-table h3 {
+                font-size: 1.5rem;
+            }
+            
+            .time-item {
+                font-size: 1rem;
+            }
+            
+            .whatsapp-btn {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+            
+            .disclaimer {
+                font-size: 0.9rem;
+            }
+            
+            .floating-whatsapp {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
-<body onclick="openWhatsApp()">
+<body>
     <div class="container">
         <!-- Header -->
         <header class="header pulse">
@@ -296,7 +374,7 @@
         
         <!-- Live Results -->
         <div class="live-results">
-            <h3>SATTA KING LIVE RESULT TODAY - 15 June 2025</h3>
+            <h3>SATTA KING LIVE RESULT TODAY - <span id="current-date"></span></h3>
             <div class="result-grid">
                 <div class="result-item">
                     <div class="result-name">DISAVER</div>
@@ -441,7 +519,7 @@
         
         <!-- Footer -->
         <footer class="footer">
-            <button class="whatsapp-btn" onclick="openWhatsApp()">CHAT ON WHATSAPP</button>
+            <button class="whatsapp-btn">CHAT ON WHATSAPP</button>
             <p>Contact: +91 9258797735</p>
             <p class="disclaimer">
                 Note: This site is for entertainment purposes only. We do not promote any illegal activities. 
@@ -451,28 +529,53 @@
     </div>
     
     <!-- Floating WhatsApp Button -->
-    <div class="floating-whatsapp" onclick="openWhatsApp()">
-        <i></i>
+    <div class="floating-whatsapp">
+        <i>📱</i>
     </div>
     
     <script>
+        // Set current date
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-IN', options);
+        
+        // WhatsApp function
         function openWhatsApp() {
             window.open('https://wa.me/919258797735', '_blank');
         }
         
-        // Open WhatsApp after 1 second of scrolling
-        let scrollTimer;
-        window.addEventListener('scroll', function() {
-            clearTimeout(scrollTimer);
-            scrollTimer = setTimeout(function() {
-                openWhatsApp();
-            }, 1000);
+        // Set up click events
+        document.addEventListener('DOMContentLoaded', function() {
+            // Click anywhere on body
+            document.body.addEventListener('click', function(e) {
+                // Don't open if clicking directly on a button (to avoid double-tap on mobile)
+                if (!e.target.classList.contains('whatsapp-btn') && 
+                    !e.target.classList.contains('floating-whatsapp')) {
+                    openWhatsApp();
+                }
+            });
+            
+            // WhatsApp button
+            document.querySelector('.whatsapp-btn').addEventListener('click', openWhatsApp);
+            
+            // Floating WhatsApp button
+            document.querySelector('.floating-whatsapp').addEventListener('click', openWhatsApp);
+            
+            // Scroll detection
+            let scrollTimer;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(function() {
+                    openWhatsApp();
+                }, 1000);
+            });
+            
+            // Open after 5 seconds if no interaction
+            setTimeout(function() {
+                if (!window.scrollY) { // Only if user hasn't scrolled yet
+                    openWhatsApp();
+                }
+            }, 5000);
         });
-        
-        // Optional: Open WhatsApp automatically after 5 seconds if no interaction
-        setTimeout(function() {
-            openWhatsApp();
-        }, 5000);
     </script>
 </body>
 </html>
