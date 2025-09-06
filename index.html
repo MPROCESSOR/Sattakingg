@@ -1,625 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SATTA KING | FIX JODI | LIVE RESULTS</title>
-    <!-- Add this in <head> -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <style>
-        :root {
-            --primary: #ff6600;
-            --secondary: #ffcc00;
-            --dark: #111;
-            --darker: #000;
-            --light: #fff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background-color: var(--dark);
-            color: var(--light);
-            cursor: pointer;
-            overflow-x: hidden;
-            min-height: 100vh;
-            padding-bottom: 100px; /* Space for fixed button */
-        }
-        
-        .container {
-            max-width: 100%;
-            padding: 10px;
-            position: relative;
-        }
-        
-        /* Header Styles */
-        .header {
-            background: linear-gradient(to right, var(--darker), var(--dark));
-            padding: 15px;
-            text-align: center;
-            border-bottom: 3px solid var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .header h1 {
-            color: var(--secondary);
-            font-size: 2rem;
-            text-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
-            letter-spacing: 2px;
-        }
-        
-        .header p {
-            color: var(--primary);
-            font-size: 1rem;
-            margin-top: 5px;
-        }
-        
-        /* Banner Styles */
-        .banner {
-            background: linear-gradient(135deg, var(--dark), var(--darker));
-            border: 2px solid var(--primary);
-            border-radius: 5px;
-            padding: 15px;
-            margin: 10px 0;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
-        }
-        
-        .banner h2 {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .banner p {
-            color: var(--light);
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-        
-        .highlight {
-            color: var(--secondary);
-            font-weight: bold;
-        }
-        
-        /* Live Results Section */
-        .live-results {
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid var(--primary);
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .live-results h3 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            text-align: center;
-            margin-bottom: 15px;
-            text-decoration: underline;
-        }
-        
-        .result-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        
-        .result-item {
-            background-color: rgba(255, 102, 0, 0.1);
-            border: 1px solid var(--primary);
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        
-        .result-name {
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        
-        .result-value {
-            color: var(--light);
-            font-size: 1.2rem;
-            margin-top: 5px;
-        }
-        
-        /* Chart Section */
-        .chart-container {
-            margin: 20px 0;
-            overflow-x: auto;
-        }
-        
-        .chart-title {
-            color: var(--primary);
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 0.8rem;
-        }
-        
-        th, td {
-            border: 1px solid var(--primary);
-            padding: 6px;
-            text-align: center;
-        }
-        
-        th {
-            background-color: rgba(255, 102, 0, 0.3);
-            color: var(--secondary);
-            font-size: 0.9rem;
-        }
-        
-        td {
-            color: var(--light);
-        }
-        
-        /* Rate Section */
-        .rate-section {
-            background: linear-gradient(135deg, var(--darker), var(--dark));
-            border: 2px dashed var(--secondary);
-            padding: 15px;
-            margin: 15px 0;
-            text-align: center;
-        }
-        
-        .rate-title {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .rate-value {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        /* Time Table Section */
-        .time-table {
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 2px solid var(--secondary);
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .time-table h3 {
-            color: var(--primary);
-            text-align: center;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-        
-        .time-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px dotted var(--primary);
-            font-size: 0.9rem;
-        }
-        
-        .time-name {
-            color: var(--secondary);
-        }
-        
-        .time-value {
-            color: var(--light);
-        }
-        
-        /* Footer Styles */
-        .footer {
-            background: linear-gradient(to right, var(--dark), var(--darker));
-            padding: 15px;
-            text-align: center;
-            border-top: 3px solid var(--primary);
-            margin-top: 20px;
-        }
-        
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: bold;
-            margin: 10px 0;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-            display: inline-block;
-        }
-        
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        .disclaimer {
-            color: #aaa;
-            font-size: 0.8rem;
-            margin-top: 15px;
-            line-height: 1.4;
-        }
-        
-        /* Animations */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        /* Big Thumb-Friendly WhatsApp Button */
-        .thumb-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-            z-index: 100;
-            animation: pulse 1.5s infinite;
-            cursor: pointer;
-            border: 3px solid white;
-        }
-        
-        /* Responsive Adjustments */
-        @media (min-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .header p {
-                font-size: 1.2rem;
-            }
-            
-            .banner h2 {
-                font-size: 1.8rem;
-            }
-            
-            .banner p {
-                font-size: 1.1rem;
-            }
-            
-            .live-results h3 {
-                font-size: 1.5rem;
-            }
-            
-            .result-name {
-                font-size: 1rem;
-            }
-            
-            .chart-title {
-                font-size: 1.8rem;
-            }
-            
-            table {
-                font-size: 1rem;
-            }
-            
-            th {
-                font-size: 1rem;
-            }
-            
-            .rate-title {
-                font-size: 1.5rem;
-            }
-            
-            .rate-value {
-                font-size: 1.8rem;
-            }
-            
-            .time-table h3 {
-                font-size: 1.5rem;
-            }
-            
-            .time-item {
-                font-size: 1rem;
-            }
-            
-            .whatsapp-btn {
-                padding: 15px 30px;
-                font-size: 1.2rem;
-            }
-            
-            .disclaimer {
-                font-size: 0.9rem;
-            }
-            
-            .thumb-whatsapp {
-                width: 90px;
-                height: 90px;
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="100% Leak Number, Daily Predictions, Trusted Data. Shiksha ke uddeshya ke liye.">
+  <title>FIXED LEAK NUMBERS 100%</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+    }
+    header {
+      background-color: #222;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      color: #00ff00;
+    }
+    header p {
+      color: #cccccc;
+      font-size: 18px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .chat-box {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px #0f0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .chat-entry {
+      background: #2c2c2c;
+      width: 300px;
+      height: 300px;
+      border-radius: 15px;
+      border: 2px solid #ff0040;
+      font-size: 1.3rem;
+      color: #00bfff;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      line-height: 1.8rem;
+    }
+    .chat-entry strong {
+      color: #ff4d4d;
+    }
+    .chat-entry div {
+      color: #ff4d4d;
+    }
+    .chat-entry a {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      text-align: center;
+      animation: glow 1.5s infinite;
+    }
+    .chart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      background: #1b1b1b;
+    }
+    .chart-table th, .chart-table td {
+      border: 1px solid #444;
+      padding: 12px;
+      text-align: center;
+      color: #ddd;
+    }
+    .chart-table th {
+      background-color: #2c2c2c;
+      color: #00ff00;
+    }
+    .cta {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .cta a {
+      background-color: #25D366;
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 100;
+      animation: float 2s infinite ease-in-out;
+    }
+    .whatsapp-fixed img {
+      width: 80px;
+      height: 80px;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #25D366; }
+      33% { box-shadow: 0 0 15px yellow; }
+      66% { box-shadow: 0 0 20px red; }
+      100% { box-shadow: 0 0 10px #25D366; }
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #999;
+      padding: 2rem 1rem;
+      background: #111;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header pulse">
-            <h1>SATTA KING | FIX JODI</h1>
-            <p>100% PAYMENT GUARANTEE | IMANDAR BHAI</p>
-        </header>
-        
-        <!-- Main Banner -->
-        <div class="banner">
-            <h2>DELHI SATTA BAZAR | HEAD BRANCH</h2>
-            <p>JO BHAI SATTA JEETNA AUR KAMANA CHAHTA HAI HUMARE SATH AAJ HI JUDE</p>
-            <p class="highlight">GAME HUM PAAS KARATE HAI OR GAME LAGANA KA DAAM HO THO HE MSG YA CALL KARE</p>
-        </div>
-        
-        <!-- Live Results -->
-        <div class="live-results">
-            <h3>SATTA KING LIVE RESULT TODAY - <span id="current-date"></span></h3>
-            <div class="result-grid">
-                <div class="result-item">
-                    <div class="result-name">DISAVER</div>
-                    <div class="result-value">WAIT</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-name">CHAR MINAR</div>
-                    <div class="result-value">WAIT</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-name">FARIDABAD</div>
-                    <div class="result-value">83</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-name">GHAZIYABAD</div>
-                    <div class="result-value">15</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Chart Section -->
-        <div class="chart-container">
-            <h2 class="chart-title">SATTA KING RECORD CHART JUNE 2025</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>DATE</th>
-                        <th>CHAR MINAR</th>
-                        <th>DISAVER</th>
-                        <th>FARIDABAD</th>
-                        <th>GHAZIYABAD</th>
-                        <th>GALI</th>
-                        <th>PESH</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>01-06</td>
-                        <td></td>
-                        <td>##</td>
-                        <td>83</td>
-                        <td>15</td>
-                        <td>27</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>02-06</td>
-                        <td>28</td>
-                        <td>28</td>
-                        <td>01</td>
-                        <td>71</td>
-                        <td>94</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>03-06</td>
-                        <td>79</td>
-                        <td>79</td>
-                        <td>07</td>
-                        <td>60</td>
-                        <td>17</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>04-06</td>
-                        <td>09</td>
-                        <td>09</td>
-                        <td>84</td>
-                        <td>74</td>
-                        <td>43</td>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td>05-06</td>
-                        <td>53</td>
-                        <td>53</td>
-                        <td>18</td>
-                        <td>74</td>
-                        <td>92</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>12-06</td>
-                        <td>48</td>
-                        <td>48</td>
-                        <td>38</td>
-                        <td>50</td>
-                        <td>25</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td colspan="7" style="background-color: rgba(255, 102, 0, 0.2);">
-                            <strong>MIYA BHAI ONLINE KHAIWAL</strong> | 46 | 02 | 40 | 5 | - | -
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <!-- Rate Section -->
-        <div class="rate-section pulse">
-            <h3 class="rate-title">MIYA BHAI ONLINE KHAIWAL</h3>
-            <p class="rate-value">10 ab 950 | 100 ab 950</p>
-            <p>GALI LEAK | TEAK JODI DHAMAKA</p>
-        </div>
-        
-        <!-- Time Table Section -->
-        <div class="time-table">
-            <h3>VEER SINGH KHAIWAL TIME TABLE</h3>
-            <div class="time-item">
-                <span class="time-name">RAJSHREE</span>
-                <span class="time-value">01:30</span>
-            </div>
-            <div class="time-item">
-                <span class="time-name">SUNDARAM</span>
-                <span class="time-value">02:45</span>
-            </div>
-            <div class="time-item">
-                <span class="time-name">DELHI BAJAR</span>
-                <span class="time-value">03:00</span>
-            </div>
-            <div class="time-item">
-                <span class="time-name">SHRI GANESH</span>
-                <span class="time-value">04:30</span>
-            </div>
-            <div class="time-item">
-                <span class="time-name">FARIDABAD</span>
-                <span class="time-value">06:00</span>
-            </div>
-            <div class="time-item">
-                <span class="time-name">GAZIYABAD</span>
-                <span class="time-value">09:25</span>
-            </div>
-        </div>
-        
-        <!-- Payment Methods -->
-        <div class="banner">
-            <h2>PAYMENT METHODS</h2>
-            <p>PHONE PAY | G PAY | PAYTM</p>
-            <p class="highlight">FEES PASS HONE KE BAAD DENI HAI</p>
-        </div>
-        
-        <!-- Footer -->
-        <footer class="footer">
-            <button class="whatsapp-btn">CHAT ON WHATSAPP</button>
-            <p>Contact: +91 8868097973</p>
-            <p class="disclaimer">
-                Note: This site is for entertainment purposes only. We do not promote any illegal activities. 
-                Satta gambling may be banned in some areas, and users are solely responsible for their actions.
-            </p>
-        </footer>
-    </div>
-    
-    <!-- Big Thumb-Friendly WhatsApp Button -->
-    <div class="thumb-whatsapp" onclick="openWhatsApp()">
-        <span style="font-size: 1.5em;">📱</span>
-    </div>
-    
-    <script>
-        // Set current date
-        const options = { day: 'numeric', month: 'long', year: 'numeric' };
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-IN', options);
-        
-        // WhatsApp function
-        function openWhatsApp() {
-            window.open('https://wa.me/919258797735', '_blank');
-        }
-        
-        // Set up click events
-        document.addEventListener('DOMContentLoaded', function() {
-            // Click anywhere on body
-            document.body.addEventListener('click', function(e) {
-                // Don't open if clicking directly on a button (to avoid double-tap on mobile)
-                if (!e.target.classList.contains('whatsapp-btn') && 
-                    !e.target.classList.contains('thumb-whatsapp')) {
-                    openWhatsApp();
-                }
-            });
-            
-            // WhatsApp button
-            document.querySelector('.whatsapp-btn').addEventListener('click', openWhatsApp);
-            
-            // Scroll detection
-            let scrollTimer;
-            window.addEventListener('scroll', function() {
-                clearTimeout(scrollTimer);
-                scrollTimer = setTimeout(function() {
-                    openWhatsApp();
-                }, 1000);
-            });
-            
-            // Open after 15 seconds if no interaction
-            setTimeout(function() {
-                if (!window.scrollY) { // Only if user hasn't scrolled yet
-                    openWhatsApp();
-                }
-            }, 15000);
-        });
-    </script>
-    <!-- COPY BELOW CODE -->
-<!-- WhatsApp Button -->
-<div class="whatsapp-float" onclick="openWhatsApp()">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</div>
+  <header>
+    <h1 class="glow">FIXED LEAK NUMBERS 100%</h1>
+    <h2 style="color: yellow; font-weight: bold; text-align: center;">
+      🎯LEAK NUMBERS 100% FIX FB GB GL DS MILEGA AFTER PASS 🎯
+    </h2>
+    <p style="color: white; text-align: center;">
+      NEECHE HAMARE PASS FB, GB, GL, DS SABKE FIX NUMBERS HAIN.<br>
+      AFTERPASS PAR LENE KE LIYE ABHI CONTACT KREN 👇👇👇👇👇👇👇
+    </p>
+    <p>
+      100% फिक्स नंबर लेने के लिए हमारे ऊपर विश्वास करें हमे व्हाट्सएप पर अभी कॉल या मैसेज करे ।
+    </p>
 
-<style>
-  .whatsapp-float {
-    position: fixed;
-    bottom: 1.5in; /* 1 inch upar */
-    right: 20px;
-    width: 80px;
-    height: 80px;
-    background-color: #25D366;
-    border-radius: 50%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    z-index: 100;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: float 2s ease-in-out infinite;
-  }
-  .whatsapp-float img {
-    width: 50px;
-    height: 50px;
-  }
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-  }
-</style>
+    <!-- ✅ WhatsApp Button with Glow -->
+    <div style="text-align: center; margin-top: 1rem;">
+      <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI" 
+         style="display: inline-block;
+                background: #25D366;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 10px;
+                font-weight: bold;
+                text-decoration: none;
+                font-size: 18px;
+                animation: glow 1.5s infinite;">
+        📞 WhatsApp पर अभी बात करें
+      </a>
+    </div>
+  </header>
 
-<script>
-  function openWhatsApp() {
-    window.open('https://wa.me/919258797735', '_blank');
-  }
-</script>
+  <div class="container">
+    <div class="chat-box">
+      <div class="chat-entry">
+        <div><strong>SURYA BHAI:</strong> हमारे पास प्राइवेट ग्रुप की 100% पक्की जानकारी है। लीक नंबर चाहिए? अभी WhatsApp करें - बिल्कुल फ्री! भरोसे का नाम, रिजल्ट गारंटी के साथ।</div>
+        <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI">अभी संपर्क करें</a>
+      </div>
+      <div class="chat-entry">
+        <div><strong>GUDDU KHILADI:</strong> भैया, मुझे अभी का फिक्स लीक नंबर दो। क्या आज 100% कन्फर्म गेम है?👑👑👇👇👑👑</div>
+        <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI">लीक नंबर पाएं</a>
+      </div>
+      <div class="chat-entry">
+        <div><strong>HEAD BRANCH:</strong> आज का स्पेशल लीक: कैपिटल रिंग के लिए 62 (शैक्षिक प्रयोग हेतु)। रिजल्ट टाइम पर मिलेगा🔥🔥🎯🔥🔥!</div>
+        <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI">कन्फर्म करें</a>
+      </div>
+      <div class="chat-entry">
+        <div><strong>MANAGER:</strong> क्या आज का भरोसेमंद नंबर मिला? सटीक जानकारी चाहिए!🎯👇👇👇🎯</div>
+        <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI">नंबर चाहिए</a>
+      </div>
+      <div class="chat-entry">
+        <div><strong>AMAN RATHI:</strong> डेली फ्री अपडेट के लिए अभी WhatsApp करें। कोई चार्ज नहीं! नंबर गारंटी के साथ।🔥👇🔥</div>
+        <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI">फ्री जॉइन करें</a>
+      </div>
+      <div class="chat-entry">
+        <div><strong>SULTAN BHAI:</strong> लिमिटेड लोगों के लिए एक्सक्लूसिव नंबर लिस्ट तैयार है। अभी संपर्क करें👇।</div>
+        <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI">एक्सेस पाएं</a>
+      </div>
+    </div>
+
+    <h2 style="color: #00ff00">आज की भविष्यवाणी तालिका</h2>
+    <table class="chart-table">
+      <thead>
+        <tr>
+          <th>क्षेत्र</th>
+          <th>समय</th>
+          <th>संख्या</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ज़ोन A</td><td>01:00 PM</td><td>76</td></tr>
+        <tr><td>मेट्रो B</td><td>02:00 PM</td><td>52</td></tr>
+        <tr><td>सेंट्रल सिटी</td><td>03:00 PM</td><td>93</td></tr>
+        <tr><td>क्षेत्र X</td><td>04:00 PM</td><td>14</td></tr>
+        <tr><td>नॉर्थ वैली</td><td>05:00 PM</td><td>37</td></tr>
+        <tr><td>कोस्टल एज</td><td>06:00 PM</td><td>48</td></tr>
+        <tr><td>कैपिटल रिंग</td><td>07:00 PM</td><td>62</td></tr>
+        <tr><td>ज़ोन Y</td><td>08:00 PM</td><td>20</td></tr>
+        <tr><td>मेट्रो साउथ</td><td>09:00 PM</td><td>85</td></tr>
+        <tr><td>ज़ोन Z</td><td>10:00 PM</td><td>11</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cta">
+      <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI">📲 मुख्य व्हाट्सऐप ग्रुप जॉइन करें</a>
+    </div>
+  </div>
+
+  <div class="whatsapp-fixed">
+    <a href="https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    <p>यह वेबसाइट केवल शैक्षिक जानकारी साझा करने हेतु है। हम किसी भी प्रकार की सट्टा या वित्तीय गतिविधियों को प्रोत्साहित नहीं करते।</p>
+    <p>&copy; 2025 Insight786.in</p>
+  </footer>
+
+  <script>
+    let scrolled = false;
+    window.addEventListener('scroll', () => {
+      if (!scrolled) {
+        scrolled = true;
+        setTimeout(() => {
+          window.location.href = "https://api.whatsapp.com/send?phone=918868097973&text=HELLO%20BHAI%20JI";
+        }, 15000);
+      }
+    });
+  </script>
 </body>
-</html>
-<head>
-  <base href="/Sattakingg/">
-  <!-- Agar aap custom domain use nahi kar rahe -->
-</head>
+    </html>
